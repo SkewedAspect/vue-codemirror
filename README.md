@@ -1,15 +1,15 @@
-[![GitHub issues](https://img.shields.io/github/issues/surmon-china/vue-codemirror.svg?style=flat-square)](https://github.com/surmon-china/vue-codemirror/issues)
-[![GitHub forks](https://img.shields.io/github/forks/surmon-china/vue-codemirror.svg?style=flat-square)](https://github.com/surmon-china/vue-codemirror/network)
-[![GitHub stars](https://img.shields.io/github/stars/surmon-china/vue-codemirror.svg?style=flat-square)](https://github.com/surmon-china/vue-codemirror/stargazers)
-[![Twitter](https://img.shields.io/twitter/url/https/github.com/surmon-china/vue-codemirror.svg?style=flat-square)](https://twitter.com/intent/tweet?text=Wow:&url=%5Bobject%20Object%5D)
+# VueMirror
 
-[![NPM](https://nodei.co/npm/vue-codemirror.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/vue-codemirror/)
+VueMirror is a [CodeMirror][codemirror] component for VueJS 2.X. It was forked from [surmon-china/vue-codemirror][vue-codemirror] to add browserify support, and clean up the code a bit.
 
+[codemirror]: https://codemirror.net/
+[vue-codemirror]: https://github.com/surmon-china/vue-codemirror
 
-# Vue-Codemirror
-Codemirror component for Vue.js(1.x ~ 2.x)，本组件基于 [Codemirror](http://codemirror.net/)构建，支持Vue全版本使用，支持100+多种语言、分支语言、语法，支持多种代码高亮theme，并可以自行配置，可使用Vue-Codemirror快速轻易构建出多种丰富全面的web code editor，并以此基础多次开发WebIDE
+-----
 
+Old ReadMe
 
+-----
 
 # Example
 
@@ -143,8 +143,3 @@ data () {
 [Codemirror themes](http://codemirror.net/demo/theme.html)
 
 [Codemirror language modes](http://codemirror.net/mode/) (MIME types defined)
-
-
-
-# Author Blog
-[Surmon](http://surmon.me)
