@@ -5,7 +5,7 @@
 module.exports = function(grunt)
 {
     grunt.initConfig({
-        clean: ['index.js', 'debug.js', 'example/example.js'],
+        clean: ['index.js', 'debug.js', 'docs/docs.js'],
         browserify: {
             options: {
                 transform: [
@@ -19,7 +19,7 @@ module.exports = function(grunt)
                     },
                 },
                 files: {
-                    "./example/example.js": "example/app.js"
+                    "./docs/docs.js": "docs/app.js"
                 }
             },
             prod: {
@@ -48,7 +48,7 @@ module.exports = function(grunt)
         },
         watch: {
             index: {
-                files: ["src/*.*", "example/**", "!example/example.js"],
+                files: ["src/*.*", "docs/**", "!docs/docs.js"],
                 tasks: ["devel"]
             },
         }
@@ -62,8 +62,8 @@ module.exports = function(grunt)
 
     //------------------------------------------------------------------------------------------------------------------
 
-    grunt.registerTask("build", ["clean", "browserify:prod", "browserify:debug"]);
-    grunt.registerTask("devel", ["clean", "browserify"]);
+    grunt.registerTask("build", ["browserify:prod", "browserify:debug"]);
+    grunt.registerTask("devel", ["browserify"]);
     grunt.registerTask("default", ["devel", "watch"]);
 
     //------------------------------------------------------------------------------------------------------------------
