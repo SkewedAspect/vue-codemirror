@@ -11,15 +11,18 @@
 <script>
 	//------------------------------------------------------------------------------------------------------------------
 
-	var CodeMirror = require('codemirror/lib/codemirror.js');
-	var CodeMirrorMetas = require('./metas.js');
+	var CodeMirror = require('codemirror/lib/codemirror');
+	var CodeMirrorMetas = require('./metas');
 
 	//------------------------------------------------------------------------------------------------------------------
 
 	module.exports = {
 		data()
 		{
-			return { content: '' };
+			return {
+				content: '',
+				unseenLines: [],
+			};
 		},
 		props: {
 			code: String,
@@ -28,7 +31,6 @@
 				type: Array,
 				default: function(){ return []; }
 			},
-			unseenLines: Array,
 			marker: {
 				type: Function,
 				default: function()
@@ -66,10 +68,6 @@
 		{
 			var error;
 			this.options = this.options || {};
-
-			// Theme handling
-			var theme = this.options.theme;
-			theme = theme == 'solarized light' ? 'solarized' : theme;
 
 			// Language handling
 			var language = this.options.mode || 'text/javascript';
@@ -198,8 +196,9 @@
 <style>
 	.CodeMirror,
 	.CodeMirror pre {
-		font-family: Menlo, Monaco, Consolas, "Courier New", monospace!important;
-		padding: 0 20px !important; /* Horizontal padding of content */
+		font-family: Hack, Menlo, Monaco, Consolas, "Courier New", monospace !important;
+		font-size: 0.85rem;
+		/*padding: 0 20px !important; !* Horizontal padding of content *!*/
 	}
 </style>
 
