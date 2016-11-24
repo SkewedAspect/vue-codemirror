@@ -5,32 +5,52 @@
 module.exports = function(grunt)
 {
     grunt.initConfig({
-        clean: ['dist'],
+        clean: ['index.js', 'debug.js', 'example/example.js'],
         browserify: {
             options: {
-                browserifyOptions: {
-                    bundleExternal: false,
-                    debug: true
-                },
                 transform: [
                     ["vueify"]
                 ]
             },
-            debug: {
+            example: {
                 options: {
-                    watch: true,
-                    watchOptions: {
-                        ignoreWatch: true
+                    browserifyOptions: {
+                        debug: true
                     },
+                },
+                files: {
+                    "./example/example.js": "example/app.js"
+                }
+            },
+            prod: {
+                options: {
                     browserifyOptions: {
                         bundleExternal: false,
-                        debug: true
+                        standalone: 'vuemirror'
                     }
                 },
                 files: {
                     "./index.js": "src/vuemirror.js"
                 }
+            },
+            debug: {
+                options: {
+                    browserifyOptions: {
+                        bundleExternal: false,
+                        standalone: 'vuemirror',
+                        debug: true
+                    }
+                },
+                files: {
+                    "./debug.js": "src/vuemirror.js"
+                }
             }
+        },
+        watch: {
+            index: {
+                files: ["src/*.*", "example/**", "!example/example.js"],
+                tasks: ["devel"]
+            },
         }
     });
 
@@ -38,11 +58,13 @@ module.exports = function(grunt)
 
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-browserify');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     //------------------------------------------------------------------------------------------------------------------
 
-    grunt.registerTask("build", ["clean", "browserify"]);
-    grunt.registerTask("default", ["build"]);
+    grunt.registerTask("build", ["clean", "browserify:prod", "browserify:debug"]);
+    grunt.registerTask("devel", ["clean", "browserify"]);
+    grunt.registerTask("default", ["devel", "watch"]);
 
     //------------------------------------------------------------------------------------------------------------------
 };

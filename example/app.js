@@ -1,44 +1,19 @@
-/*
-*
-* 主程序模块
-*
-*/
+//----------------------------------------------------------------------------------------------------------------------
+// Example App
+//
+// @module
+//----------------------------------------------------------------------------------------------------------------------
 
-// Libs
-import Vue from 'vue'
+const Vue = require('vue');
 
-// App
-import App from './App.vue'
+// Components
+const App = require('./app.vue');
 
-// component
-import Example from './Example.vue'
+//----------------------------------------------------------------------------------------------------------------------
 
-// common component
-import CodeMirror from 'vue-codemirror'
+const app = new Vue({
+    el: '#example',
+    render: render => render(App)
+});
 
-// use
-Vue.use(CodeMirror)
-
-// router
-const router = new Router({
-  history: true,
-  saveScrollPosition: false,
-  transitionOnLoad: true
-})
-
-// routerMap
-router.map({
-  '/': {
-    name: 'example',
-    component: Example
-  }
-})
-
-// routerRedirect
-router.redirect({
-  '*': '/'
-})
-
-// Start
-router.start(App, 'app')
-
+//----------------------------------------------------------------------------------------------------------------------

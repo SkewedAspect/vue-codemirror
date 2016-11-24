@@ -1,6 +1,6 @@
 {
   "name": "vuemirror",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Codemirror component for Vue.js 2.x",
   "main": "index.js",
   "scripts": {
@@ -34,6 +34,8 @@
     "grunt": "^1.0.1",
     "grunt-browserify": "^5.0.0",
     "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "node-static": "^0.7.9",
     "vueify": "^9.3.0"
   }
 }

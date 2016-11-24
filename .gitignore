@@ -5,6 +5,7 @@
 
 # Build artifacts
 index.js
+debug.js
 
 # Node artifacts
 node_modules
