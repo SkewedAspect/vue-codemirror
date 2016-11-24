@@ -1,32 +1,39 @@
 {
-  "name": "vue-codemirror",
-  "version": "2.1.2",
-  "description": "Codemirror component for Vue.js(1.x ~ 2.x)",
+  "name": "vuemirror",
+  "version": "0.0.0",
+  "description": "Codemirror component for Vue.js 2.x",
   "main": "index.js",
   "scripts": {
+    "build": "./node_modules/.bin/grunt build",
+    "prepublish": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/surmon-china/vue-codemirror.git"
+    "url": "https://github.com/SkewedAspect/vuemirror.git"
   },
   "keywords": [
-    "vue-codemirror",
-    "vue codemirror",
     "codemirror",
     "vue"
   ],
   "author": {
-    "name": "Surmon",
-    "email": "surmon@foxmail.com",
-    "url": "http://surmon.me"
+    "name": "Christopher S. Case",
+    "email": "chris.case@g33xnexus.com",
+    "url": "http://chriscase.io"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/surmon-china/vue-codemirror/issues"
+    "url": "https://github.com/SkewedAspect/vuemirror/issues"
   },
-  "homepage": "https://github.com/surmon-china/vue-codemirror#readme",
+  "homepage": "https://github.com/SkewedAspect/vuemirror#readme",
   "dependencies": {
-    "codemirror": "^5.19.0"
+    "vue": "^2.0.8",
+    "codemirror": "^5.21.0"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-browserify": "^5.0.0",
+    "grunt-contrib-clean": "^1.0.0",
+    "vueify": "^9.3.0"
   }
 }
