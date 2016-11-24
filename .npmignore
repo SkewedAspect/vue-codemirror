@@ -1,10 +1,13 @@
 # Dependency directories
 node_modules
 
-example
-/example
-example/
+# Project files
+.editorconfig
+.gitignore
+Gruntfile.js
 
+# Project directories
+src
+example
 screenshots
-screenshots/
-/screenshots
+
