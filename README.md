@@ -69,6 +69,22 @@ After that, simply include the VueMirror component and use it.
 </script>
 ```
 
+If you want to see more examples, check out the [Live Demo][live-demo].
+
+[live-demo]: https://skewedaspect.github.io/vuemirror/
+
+## API Documentation
+
+There's not much documentation, yet. Use `v-model` to bind to the content of the editor, and pass CodeMirror options in
+via the `options` paramater.
+
+Better documentation will be added in the future.
+
+## Contributing
+
+All contributions are welcome. Please make sure to follow the same style at the code you're modifying, ans give an
+explanation of the changes in the pull request.
+
 ## CodeMirror Documentation
 
 * [Codemirror config APIs](http://codemirror.net/doc/manual.html#config)
