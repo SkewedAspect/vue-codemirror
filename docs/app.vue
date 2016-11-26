@@ -18,7 +18,7 @@
 				</li>
             </ul>
 		</nav>
-		<div class="container-fluid">
+		<div class="container">
 			<p>
 				VueMirror is a <a href="https://codemirror.net/">CodeMirror</a> component for VueJS 2.X. It is based off
 				work from <a href="https://github.com/surmon-china/vue-codemirror">surmon-china/vue-codemirror</a>
