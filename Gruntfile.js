@@ -9,7 +9,10 @@ module.exports = function(grunt)
         browserify: {
             options: {
                 transform: [
-                    ["vueify"]
+                    ["vueify"],
+                ],
+                plugin: [
+                    ["browserify-derequire"]
                 ]
             },
             example: {
@@ -63,7 +66,7 @@ module.exports = function(grunt)
     //------------------------------------------------------------------------------------------------------------------
 
     grunt.registerTask("build", ["browserify:prod", "browserify:debug"]);
-    grunt.registerTask("devel", ["browserify"]);
+    grunt.registerTask("devel", ["browserify:prod", "browserify:debug", "browserify:example"]);
     grunt.registerTask("default", ["devel", "watch"]);
 
     //------------------------------------------------------------------------------------------------------------------
