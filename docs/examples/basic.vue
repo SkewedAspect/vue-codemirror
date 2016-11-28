@@ -36,7 +36,7 @@
 <script>
     //------------------------------------------------------------------------------------------------------------------
 
-	const { CodeMirror } = require('../../src/vuemirror');
+	const { CodeMirror } = require('../../index.js');
 
 	// CodeMirror mode
 	require('codemirror/mode/javascript/javascript');
