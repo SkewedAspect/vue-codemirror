@@ -27,8 +27,8 @@ module.exports = function(grunt)
             },
             prod: {
                 options: {
+                    external: ['vue', /*'codemirror'*/],
                     browserifyOptions: {
-                        bundleExternal: false,
                         standalone: 'vuemirror'
                     }
                 },
@@ -38,8 +38,8 @@ module.exports = function(grunt)
             },
             debug: {
                 options: {
+                    external: ['vue', /*'codemirror'*/],
                     browserifyOptions: {
-                        bundleExternal: false,
                         standalone: 'vuemirror',
                         debug: true
                     }
