@@ -36,7 +36,7 @@
 <script>
     //------------------------------------------------------------------------------------------------------------------
 
-	const { CodeMirror } = require('../../src/vuemirror');
+	const { CodeMirror } = require('../../index');
 
 	// CodeMirror mode
 	require('codemirror/mode/javascript/javascript');
@@ -53,7 +53,7 @@
 				code: `var foo = "apples";`,
 				options: {
 					tabSize: 4,
-					mode: 'text/javascript',
+					mode: 'javascript',
 					lineNumbers: true,
 					line: true,
 				},

@@ -12,7 +12,6 @@
 	//------------------------------------------------------------------------------------------------------------------
 
 	var CodeMirror = require('codemirror/lib/codemirror');
-	var CodeMirrorMetas = require('./metas');
 
 	//------------------------------------------------------------------------------------------------------------------
 
@@ -68,37 +67,6 @@
 		{
 			var error;
 			this.options = this.options || {};
-
-			// Language handling
-			var language = this.options.mode || 'text/javascript';
-			if(typeof language == 'string')
-			{
-				try
-				{
-					language = CodeMirrorMetas.findModeByMIME(language).mode
-				}
-				catch(exp)
-				{
-					error = new Error(`Configuration error: The CodeMirror language mode '${ language }' is configured incorrectly, or it is not supported. Did you forget to require it before VueMirror?`);
-					error.innerError = exp;
-
-					throw error;
-				} // end try/catch
-			}
-			else
-			{
-				try
-				{
-					language = CodeMirrorMetas.findModeByName(language.name).mode
-				}
-				catch(exp)
-				{
-					error = new Error(`Configuration error: The CodeMirror language mode '${ language }' is configured incorrectly, or it is not supported. Did you forget to require it before VueMirror?`);
-					error.innerError = exp;
-
-					throw error;
-				}
-			} // end if
 		},
 		ready()
 		{
